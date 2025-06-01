@@ -1,0 +1,31 @@
+.custom-dialog {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  .dialog-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .close-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .close-button:hover {
+    background-color: #0056b3;
+  }
