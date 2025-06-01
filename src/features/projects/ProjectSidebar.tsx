@@ -1,8 +1,16 @@
+import { Project } from './useProjects';
 import { Button } from "../../shared/ui/Button/Button";
 import { ProjectList } from "./ProjectList";
 import './ProjectSidebar.css';
 
-export function ProjectSidebar({ projects, onSelectProject, onAddProject, selectedProjectId }) {
+interface ProjectSidebarProps {
+  projects: Project[];
+  onSelectProject: (id: number) => void;
+  onAddProject: () => void;
+  selectedProjectId: number | null | undefined;
+}
+
+export function ProjectSidebar({ projects, onSelectProject, onAddProject, selectedProjectId }: ProjectSidebarProps) {
   return (
     <aside className="sidebar">
       <h1>Projects</h1>

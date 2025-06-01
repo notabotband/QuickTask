@@ -1,6 +1,13 @@
+import { Project } from './useProjects';
 import './ProjectList.css';
 
-export function ProjectList({ projects, onSelectProject, selectedProjectId }) {
+interface ProjectListProps {
+  projects: Project[];
+  onSelectProject: (id: number) => void;
+  selectedProjectId: number | null | undefined;
+}
+
+export function ProjectList({ projects, onSelectProject, selectedProjectId }: ProjectListProps) {
   return (
     <ul className="project-list">
       {projects.map((project) => (

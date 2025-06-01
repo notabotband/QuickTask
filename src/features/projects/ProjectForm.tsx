@@ -1,21 +1,26 @@
-import { useRef } from 'react';
+import { useRef, RefObject } from 'react';
 import { Input } from '../../shared/components/Input/Input';
 import { Modal } from '../../shared/components/Modal/Modal';
 import './ProjectForm.css';
 
-export function ProjectForm({ onAdd, onCancel }) {
-  const modal = useRef();
-  const title = useRef();
-  const description = useRef();
-  const date = useRef();
+interface ProjectFormProps {
+  onAdd: (project: { title: string; description: string; date: string }) => void;
+  onCancel: () => void;
+}
+
+export function ProjectForm({ onAdd, onCancel }: ProjectFormProps) {
+  const modal = useRef<{ open: () => void }>(null);
+  const title = useRef<HTMLInputElement>(null);
+  const description = useRef<HTMLTextAreaElement>(null);
+  const date = useRef<HTMLInputElement>(null);
 
   const handleSave = () => {
-    const titleValue = title.current.value;
-    const descriptionValue = description.current.value;
-    const dateValue = date.current.value;
+    const titleValue = title.current?.value || '';
+    const descriptionValue = description.current?.value || '';
+    const dateValue = date.current?.value || '';
 
     if (titleValue.trim() === '' || descriptionValue.trim() === '' || dateValue.trim() === '') {
-      modal.current.open();
+      modal.current?.open();
       return;
     }
 

@@ -1,5 +1,10 @@
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import './style.css';
 
-export function Button({ children, ...props }) {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+}
+
+export function Button({ children, ...props }: ButtonProps) {
     return <button className='button' {...props}>{children}</button>
 }
