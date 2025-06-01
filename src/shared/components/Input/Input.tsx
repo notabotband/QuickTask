@@ -2,14 +2,28 @@ import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 type InputProps = {
   label: string;
-  textarea?: boolean;
-} & (InputHTMLAttributes<HTMLInputElement> | TextareaHTMLAttributes<HTMLTextAreaElement>);
+  textarea?: false;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(({ label, textarea, ...props }, ref) => {
-  return (
-    <p>
-      <label>{label}</label>
-      {textarea ? <textarea ref={ref as any} {...props} /> : <input ref={ref as any} {...props} />}
-    </p>
-  )
-});
+type TextareaProps = {
+  label: string;
+  textarea: true;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
+
+type Props = InputProps | TextareaProps;
+
+export const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
+  (props, ref) => {
+    const { label, textarea, ...rest } = props;
+    return (
+      <p>
+        <label>{label}</label>
+        {textarea ? (
+          <textarea ref={ref as React.Ref<HTMLTextAreaElement>} {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)} />
+        ) : (
+          <input ref={ref as React.Ref<HTMLInputElement>} {...(rest as InputHTMLAttributes<HTMLInputElement>)} />
+        )}
+      </p>
+    );
+  }
+);
