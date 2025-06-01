@@ -1,54 +1,54 @@
 # QuickTask
 
-Task Manager на React
+Task Manager built with React
 
-## Описание
+## Description
 
-QuickTask — это современный менеджер задач/проектов, реализованный на React с использованием кастомных и Tailwind CSS стилей. Приложение позволяет создавать, просматривать и удалять проекты, а также удобно работать с задачами в современном интерфейсе.
+QuickTask is a modern project/task manager built with React, using custom and Tailwind CSS styles. The app allows you to create, view, and delete projects, and provides a clean, modern interface for managing your tasks.
 
-## Стек технологий
+## Tech Stack
 - React
 - Tailwind CSS
 - Vite
 - CSS Modules
 
-## Быстрый старт
+## Quick Start
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
    ```bash
    git clone https://github.com/notabotband/QuickTask.git
    cd QuickTask
    ```
-2. Установите зависимости:
+2. Install dependencies:
    ```bash
    npm install
-   # или
+   # or
    pnpm install
    ```
-3. Запустите проект:
+3. Run the project:
    ```bash
    npm run dev
-   # или
+   # or
    pnpm dev
    ```
-4. Откройте [http://localhost:5173](http://localhost:5173) в браузере.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Структура проекта
-- `src/features/projects/` — основные компоненты для работы с проектами
-- `src/shared/components/` — переиспользуемые компоненты (Input, Modal, Container)
-- `src/shared/ui/` — UI-компоненты (Button)
-- `src/index.css` — глобальные стили и переменные
+## Project Structure
+- `src/features/projects/` — main components for project management
+- `src/shared/components/` — reusable components (Input, Modal, Container)
+- `src/shared/ui/` — UI components (Button)
+- `src/index.css` — global styles and variables
 
-## Возможности
-- Создание и удаление проектов
-- Современный адаптивный интерфейс
-- Поддержка мобильных устройств
+## Features
+- Create and delete projects
+- Modern, responsive UI
+- Mobile support
 
 ## TODO
-- Добавить задачи внутри проектов
-- Подтверждение удаления
-- Авторизация и хранение данных
+- Add tasks inside projects
+- Delete confirmation modal
+- Authentication and data persistence
 
 ---
 
-**Pull requests приветствуются!** 
+**Pull requests are welcome!** 
